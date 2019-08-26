@@ -1,13 +1,11 @@
 /*
-sort 함수 기본
+sort function basic
 */
 
 #include <iostream>
 #include <algorithm>
 
 using namespace std;
-
-int sorted[10];
 
 void show(int* numbers) {
 	for (int i = 0; i < 10; i++)
