@@ -1,5 +1,5 @@
 /*
-sort 함수 기본
+sort function basic
 */
 
 #include <iostream>
