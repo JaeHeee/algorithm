@@ -5,8 +5,6 @@
 
 using namespace std;
 
-
-
 int main(void) {
 
 	int numbers[4];
