@@ -2,8 +2,8 @@ T = int(input())
 
 for k in range(T):
     candidate = []
-    N, M = map(int, input().split(" "))
-    number = list(map(int, input().split(" ")))
+    N, M = map(int, input().split())
+    number = list(map(int, input().split()))
 
     for i in range(0, N-M+1):
         sum = 0
