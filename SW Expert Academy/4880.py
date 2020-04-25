@@ -22,4 +22,3 @@ for i in range(T):
     result = finder(1, N)
 
     print("#%d %d" % (i + 1, result))
-
