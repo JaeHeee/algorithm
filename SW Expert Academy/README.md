@@ -2,7 +2,6 @@ SW Expert Academy
 =================
 
 ## Contents
-***
 ### Programming Intermediate
 * List
 * String
