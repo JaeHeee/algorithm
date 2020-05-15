@@ -11,3 +11,4 @@ SummerWinter Coding
 6. 방문 길이
 7. 숫자 게임
 8. 기지국 설치
+9. 쿠키구입
