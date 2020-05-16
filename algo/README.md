@@ -11,3 +11,4 @@ algorithm
   * BFS
   * DFS
   * Binary Tree and Traversal
+  * Binary Search
