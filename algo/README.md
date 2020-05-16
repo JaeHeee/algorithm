@@ -9,3 +9,4 @@ algorithm
   * counting sort
 * search & tree
   * BFS
+  * DFS
