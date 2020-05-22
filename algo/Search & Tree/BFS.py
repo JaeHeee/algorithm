@@ -22,3 +22,4 @@ def bfs(start):
                 checked[i-1] = True
 
 bfs(1)
+
