@@ -6,16 +6,17 @@ def solution(cacheSize, cities):
     if cacheSize != 0:
         for c in cities:
             if c in cache:
-                cache.pop()
-    for c in cities:
-        if c.lower() in cache:
-            answer += 1
-        else:
-            cache.append(c.lower())
-            answer += 5
-
-        if len(cache) > cacheSize and cacheSize > 0:
-            cache.pop(0)
+                cache.pop(cache.index(c))
+                cache.append(c)
+                answer += 1
+            else:
+                if len(cache) >= cacheSize:
+                    cache.pop(0)
+                    cache.append(c)
+                else:
+                    cache.append(c)
+                answer += 5
     else:
         answer = len(cities) * 5
+
     return answer
