@@ -19,12 +19,11 @@ def solution(str1, str2):
     for u in multiuni:
         uni1 = multilist1.count(u)
         uni2 = multilist2.count(u)
-        uni_ += max(un
-        i1, uni2)
+        uni_ += max(uni1, uni2)
 
-        if uni_ == 0:
-            answer = 1
-        else:
-            answer = int_ / uni_
+    if uni_ == 0:
+        answer = 1
+    else:
+        answer = int_ / uni_
 
-        return int(answer * 65536)
+    return int(answer * 65536)
