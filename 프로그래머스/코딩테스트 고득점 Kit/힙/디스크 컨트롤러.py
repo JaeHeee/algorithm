@@ -17,9 +17,11 @@ def solution(jobs):
         if disk_heap:
             disk = heapq.heappop(disk_heap)
             time += disk[1][1]
+            # 현재시간 - 작업요청시간 = 해당 작업이 완료될 때까지 걸린 시
             answer.append(time-disk[1][0])
             jobs.remove(disk[1])
             disk_heap=[]
+        # 현재 시간에 해야할 작업이 없으
         else:
             time+=1
 
