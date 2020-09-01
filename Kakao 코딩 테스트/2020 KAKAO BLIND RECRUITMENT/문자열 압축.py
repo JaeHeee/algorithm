@@ -21,6 +21,7 @@ def solution(s):
                 pos += i
             # 이전의 문자열과 현재의 문자열이 다른 경우
             elif stack[-1] != s[pos:pos + i]:
+                # 숫자 + 문자 형태 만들어준다.
                 if count > 1:
                     temp += str(count)
                 temp += stack[-1]
