@@ -1,23 +1,38 @@
 from itertools import permutations
 
 
-def solution(numbers):
+def solution(paper):
     answer = 0
-    prime = list(numbers)
-    for i in range(2, len(numbers) + 1):
-        temp = list(permutations(numbers, i))
-        for t in temp:
-            prime.append(''.join(t))
-    prime_set = set([int(p) for p in prime])
+    # 숫자 조합들
+    numbers = set()
 
-    sieve = [1] * (max(prime_set) + 1)
-    for j in range(2, int(max(prime_set) ** 0.5) + 1):
-        if sieve[j] == 1:
-            for k in range(j + j, max(prime_set) + 1, j):
+    # numbers의 표현할 수 있는 모든 순열을 만듭니다.
+    for i in range(1, len(paper) + 1):
+        temp = list(permutations(paper, i))
+        # 순열들을 합쳐서 숫자 조합으로 만듭니다.
+        for t in temp:
+            numbers.add(int(''.join(t)))
+
+    # 에라토스테네스의 체
+    max_ = max(numbers)
+    sieve = [1] * (max_ + 1)
+
+    for i in range(2, int(max_**0.5) + 1):
+        if sieve[i] == 1:
+            j=2
+            while i*j <= max_:
+                k = i*j
+                j+=1
                 sieve[k] = 0
-    prime_numbers = [n for n in range(2, max(prime_set) + 1) if sieve[n] == 1]
-    for p in prime_set:
-        if p in prime_numbers:
+
+    # 소수만 가져오기
+    prime_numbers = [i for i in range(2, len(sieve)) if sieve[i] == 1]
+
+    # numbers의 숫자가 소수인지 확인
+    for n in numbers:
+        if n in prime_numbers:
             answer += 1
 
     return answer
+
+## max_time = 2364.02ms
