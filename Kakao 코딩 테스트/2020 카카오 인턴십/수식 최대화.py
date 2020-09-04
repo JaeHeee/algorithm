@@ -19,13 +19,14 @@ def solution(expression):
         if exp == []:
             exp.append(e)
         else:
-            if e in operators:
+            if e in operators:  # operator 면 추가
                 exp.append(e)
-            elif exp[-1] not in operators:
+            elif exp[-1] not in operators:  # operator 아니면 문자열 합쳐주기
                 exp[-1] += e
             elif exp[-1] in operators:
                 exp.append(e)
 
+    # 모든 operator 순열 만들기
     operators = list(permutations(operators, 3))
 
     for operator in operators:
@@ -35,6 +36,7 @@ def solution(expression):
             while data:
                 d = data.pop(0)
                 if d == op:
+                    # 스택에 있는 수와 data의 수 꺼내서 op로 연산
                     cal = operation(stack.pop(-1), data.pop(0), op)
                     stack.append(cal)
                 else:
@@ -44,3 +46,5 @@ def solution(expression):
         answer.append(abs(int(data[0])))
 
     return max(answer)
+
+solution("100-200*300-500+20")

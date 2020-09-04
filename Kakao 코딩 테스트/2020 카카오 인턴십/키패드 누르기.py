@@ -5,8 +5,10 @@ def solution(numbers, hand):
     center = [2, 5, 8, 0]
     pos_l = '*'
     pos_r = '#'
+    # 손가락이 가운데에 있으면 True
     c_l = False
     c_r = False
+
     for n in numbers:
         if n in left_side:
             answer += 'L'
@@ -21,10 +23,12 @@ def solution(numbers, hand):
                 l_dist = abs(center.index(n) - center.index(pos_l))
             else:
                 l_dist = abs(center.index(n) - left_side.index(pos_l)) + 1
+
             if c_r:
                 r_dist = abs(center.index(n) - center.index(pos_r))
             else:
                 r_dist = abs(center.index(n) - right_side.index(pos_r)) + 1
+
             if l_dist < r_dist:
                 pos_l = n
                 c_l = True
