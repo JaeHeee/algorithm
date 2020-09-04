@@ -1,18 +1,20 @@
 check_list = []
 
 
-def check(idx, candidate, temp, length):
+def check(idx, candidate, banned, length):
     global check_list
+    # banned가 다 채워진 경우
     if idx == len(candidate):
-        if len(temp) == length and set(temp) not in check_list:
-            check_list.append(set(temp))
+        ban = set(banned)
+        if len(ban) == length and ban not in check_list:
+            check_list.append(ban)
         return
-
+    # 재귀를 이용하여 banned를 계속 추가
     for u_id in candidate[idx]:
-        if u_id not in temp:
-            temp.append(u_id)
-            check(idx + 1, candidate, temp, length)
-            temp.remove(u_id)
+        if u_id not in banned:
+            banned.append(u_id)
+            check(idx + 1, candidate, banned, length)
+            banned.remove(u_id)
 
 
 def solution(user_id, banned_id):
@@ -22,18 +24,34 @@ def solution(user_id, banned_id):
     for b in banned_id:
         temp = set()
         for u in user_id:
+            # 아이디의 길이를 먼저 확인
             if len(u) == len(b):
                 check_count = 0
+                # 매칭이 되는지 확인
                 for u_word, b_word in zip(u, b):
                     if u_word == b_word or b_word == '*':
                         check_count += 1
                     else:
                         break
+                # 매칭이 되면 temp에 추가
                 if check_count == len(u):
                     temp.add(u)
-            if temp not in candidate:
-                candidate.append(temp)
+        candidate.append(temp)
 
     check(0, candidate, [], len(banned_id))
     answer = len(check_list)
+    print("answer:",answer)
     return answer
+
+print(1)
+# solution(["frodo", "fradi", "crodo", "abc123", "frodoc"], ["fr*d*", "abc1**"])
+# check_list = []
+# print()
+# print(2)
+# print()
+solution(["frodo", "fradi", "crodo", "abc123", "frodoc"], ["*rodo", "*rodo", "******"])
+# check_list = []
+# print()
+# print(3)
+# print()
+# solution(["frodo", "fradi", "crodo", "abc123", "frodoc"], ["fr*d*", "*rodo", "******", "******"])
