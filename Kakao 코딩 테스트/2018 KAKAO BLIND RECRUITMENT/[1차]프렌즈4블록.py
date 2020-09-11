@@ -51,6 +51,3 @@ def solution(m, n, board):
         check = remove_block(idx, board)
 
     return answer
-
-
-solution(6,6,['TTTANT', 'RRFACC', 'RRRFCC', 'TRRRAA', 'TTMMMF', 'TMMTTJ'])

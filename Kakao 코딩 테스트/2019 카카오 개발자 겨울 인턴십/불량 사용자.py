@@ -42,16 +42,3 @@ def solution(user_id, banned_id):
     answer = len(check_list)
     print("answer:",answer)
     return answer
-
-print(1)
-# solution(["frodo", "fradi", "crodo", "abc123", "frodoc"], ["fr*d*", "abc1**"])
-# check_list = []
-# print()
-# print(2)
-# print()
-solution(["frodo", "fradi", "crodo", "abc123", "frodoc"], ["*rodo", "*rodo", "******"])
-# check_list = []
-# print()
-# print(3)
-# print()
-# solution(["frodo", "fradi", "crodo", "abc123", "frodoc"], ["fr*d*", "*rodo", "******", "******"])

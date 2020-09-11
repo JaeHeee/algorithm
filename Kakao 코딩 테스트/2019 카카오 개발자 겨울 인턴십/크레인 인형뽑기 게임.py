@@ -21,4 +21,4 @@ def solution(board, moves):
         elif check != 0:
             basket.append(check)
 
-    return answerㄴㄴ
+    return answer

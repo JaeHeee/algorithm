@@ -46,5 +46,3 @@ def solution(expression):
         answer.append(abs(int(data[0])))
 
     return max(answer)
-
-solution("100-200*300-500+20")

@@ -13,5 +13,3 @@ def solution(n, arr1, arr2):
                 result += ' '
         answer.append(result)
     return answer
-
-solution(5 ,[9, 2, 28, 18, 11], [30, 1, 21, 17, 28])
