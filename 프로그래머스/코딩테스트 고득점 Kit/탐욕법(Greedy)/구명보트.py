@@ -1,8 +1,10 @@
 def solution(people, limit):
     answer = 0
     people.sort()
-    i = 0;
+    i = 0
     j = len(people) - 1
+
+    # 제일 무거운 사람부터 구출
     while i <= j:
         answer += 1
         if people[i] + people[j] <= limit:
