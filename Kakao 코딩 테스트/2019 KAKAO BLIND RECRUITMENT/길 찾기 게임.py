@@ -71,8 +71,8 @@ def solution(nodeinfo):
                     left_child = Node(x, id, parent.left_bound, parent.x)
                     parent.left_node = left_child
                     tree[-1].append(left_child)
-                    break우
-                # 오른쪽 자식인 경
+                    break
+                # 오른쪽 자식인 경우
                 elif parent.right_bound >= x and parent.x < x:
                     right_child = Node(x, id, parent.x, parent.right_bound)
                     parent.right_node = right_child
