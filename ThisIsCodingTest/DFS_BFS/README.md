@@ -37,10 +37,10 @@
 	- 이때 A와 B의 최대공약수는 B와 R의 최대공약수와 같다.
 
 	def gcd(a, b):
-		if a % b == 0:
-			return b
-		else:
-			return gcd(b, a % b)
+	    if a % b == 0:
+	        return b
+	    else:
+	        return gcd(b, a % b)
 
 
 ### DFS (Depth-First Search)
@@ -52,12 +52,12 @@
 	- 더 이상 2번의 과정을 수행할 수 없을 때까지 반복한다.
 
 	def dfs(graph, v, visited):
-		visited[v] = True
-		print(v, end=' ')
+	    visited[v] = True
+	    print(v, end=' ')
 		
-		for i in graph[v]:
-			if not visited[i]:
-				dfs(graph, i, visited)
+	    for i in graph[v]:
+	        if not visited[i]:
+	            dfs(graph, i, visited)
 
 
 ### BFS (Breadth-First Search)
@@ -71,17 +71,17 @@
 	from collections import deque
 
 	def bfs(graph, start, visited):
-		queue = deque([start])
-		visited[start] = True
+	    queue = deque([start])
+	    visited[start] = True
 
-		while queue:
-			v = queue.popleft()
-			print(v, end=' ')
+	    while queue:
+                v = queue.popleft()
+		print(v, end=' ')
 
-			for i in graph[v]:
-				if not visited[i]:
-					queue.append(i)
-					visited[i] = True
+	        for i in graph[v]:
+		    if not visited[i]:
+			queue.append(i)
+			visited[i] = True
 
 
 #### Reference
