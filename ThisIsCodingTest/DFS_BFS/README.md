@@ -53,14 +53,15 @@
 	- 스택의 최상단 노드에 방문하지 않은 인접한 노드가 하나라도 있으면 그 노드를 스택에 넣고 방문처리한다. 방문하지 않은 인접 노드가 없으면 스택에서 최상단 노드를 꺼낸다.
 	- 더 이상 2번의 과정을 수행할 수 없을 때까지 반복한다.
 	
-
-	  def dfs(graph, v, visited):
-	      visited[v] = True
-	      print(v, end=' ')
+	``` python
+	def dfs(graph, v, visited):
+	    visited[v] = True
+	    print(v, end=' ')
 		
-	      for i in graph[v]:
-	          if not visited[i]:
-	              dfs(graph, i, visited)
+	    for i in graph[v]:
+	        if not visited[i]:
+	            dfs(graph, i, visited)
+	```
 
 
 ### BFS (Breadth-First Search)
@@ -71,21 +72,22 @@
 	- 큐에서 노드를 꺼낸 뒤해 해당 노드의 인접 노드 중에서 방문하지 않은 노드를 모두 큐에 삽입하고 방문 처리한다.
 	- 더 이상 2번의 과정을 수행할 수 없을 때까지 반복한다.
 	
+	``` python
+	from collections import deque
 
-	  from collections import deque
+	def bfs(graph, start, visited):
+	    queue = deque([start])
+	    visited[start] = True
 
-	  def bfs(graph, start, visited):
-	      queue = deque([start])
-	      visited[start] = True
+	    while queue:
+                v = queue.popleft()
+		print(v, end=' ')
 
-	      while queue:
-                  v = queue.popleft()
-		  print(v, end=' ')
-
-	          for i in graph[v]:
-		      if not visited[i]:
-			  queue.append(i)
-			  visited[i] = True
+	        for i in graph[v]:
+		    if not visited[i]:
+			queue.append(i)
+			visited[i] = True
+	```
 
 
 #### Reference
